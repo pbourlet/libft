@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:42:20 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/22 15:07:55 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:37:28 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_solvefin(int *d, char *s, int *t, char *tab)
+int				ft_solvefin(int *d, char *s, int *t, char *tab)
 {
 	if (d[3] == 1 && d[2] != 1 && (s[t[1]] == 'i' || s[t[1]] == 'd'
 	|| s[t[1]] == 'D') && tab[0] != '-')
@@ -29,7 +29,7 @@ int		ft_solvefin(int *d, char *s, int *t, char *tab)
 	return (1);
 }
 
-void	ft_writeend(char *s, int *i, int *cpt)
+static	void	ft_writeend(char *s, int *i, int *cpt)
 {
 	while (s[*i] && s[*i] != '%')
 	{
@@ -40,7 +40,7 @@ void	ft_writeend(char *s, int *i, int *cpt)
 	*i = *i - (s[*i - 1] == '%' ? 1 : 0);
 }
 
-int		ft_testfin(char *s, int *i, int *t, int *d)
+static	int		ft_testfin(char *s, int *i, int *t, int *d)
 {
 	char	*tmp;
 
@@ -69,7 +69,7 @@ int		ft_testfin(char *s, int *i, int *t, int *d)
 	return (1);
 }
 
-int		ft_solve(int *d, char *s, char **tab)
+int				ft_solve(int *d, char *s, char **tab)
 {
 	int		t[10];
 

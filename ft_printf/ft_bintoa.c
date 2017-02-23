@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 15:23:44 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/20 20:24:59 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:24:15 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_tabclr(char **tab, int len)
+static	void	ft_tabclr(char **tab, int len)
 {
 	int i;
 
@@ -25,7 +25,7 @@ void	ft_tabclr(char **tab, int len)
 	}
 }
 
-char	*ft_resul(char *res, char *tab, int lenb)
+static	char	*ft_resul(char *res, char *tab, int lenb)
 {
 	char	*tronc[4];
 	int		i;
@@ -46,7 +46,7 @@ char	*ft_resul(char *res, char *tab, int lenb)
 	return (tab);
 }
 
-char	*ft_trad(char *tab, char *bin, int lenb)
+static	char	*ft_trad(char *tab, char *bin, int lenb)
 {
 	int lent;
 	int c;
@@ -69,7 +69,7 @@ char	*ft_trad(char *tab, char *bin, int lenb)
 	return (tab);
 }
 
-char	*ft_init(int lenb)
+static	char	*ft_init(int lenb)
 {
 	char	*tabi;
 
@@ -85,7 +85,7 @@ char	*ft_init(int lenb)
 	return (tabi);
 }
 
-char	*ft_bintoa(char *tab)
+char			*ft_bintoa(char *tab)
 {
 	char	*tabi;
 	char	*res;

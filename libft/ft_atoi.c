@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:38:30 by pbourlet          #+#    #+#             */
-/*   Updated: 2016/11/14 17:19:42 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:17:59 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int		ft_atoi(const char *str)
 	int					num;
 
 	i = 0;
-	neg = 0;
-	num = 0;
+	if (!(neg = 0) && str[i] == '\e')
+		return (0);
 	sstr = (unsigned char *)str;
-	while (sstr[i] <= 32)
+	while (!(num = 0) && sstr[i] <= 32)
 		i++;
 	if (sstr[i] == '-')
 		neg = 1;

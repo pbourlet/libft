@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 16:49:00 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/16 21:10:44 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:32:20 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_pos(char *str, intmax_t *i, int base, intmax_t nb)
+static	char	*ft_pos(char *str, intmax_t *i, int base, intmax_t nb)
 {
 	while (nb != 0)
 	{
@@ -27,7 +27,7 @@ char	*ft_pos(char *str, intmax_t *i, int base, intmax_t nb)
 	return (str);
 }
 
-int		ft_nblenmax(intmax_t nb)
+static	int		ft_nblenmax(intmax_t nb)
 {
 	intmax_t digit;
 
@@ -44,7 +44,7 @@ int		ft_nblenmax(intmax_t nb)
 	return (digit);
 }
 
-char	*ft_itoabase(intmax_t nb, int base)
+char			*ft_itoabase(intmax_t nb, int base)
 {
 	char		*str;
 	intmax_t	i;

@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 22:07:15 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/23 15:04:37 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:03:52 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 int					ft_atoi(const char *str);
 int					ft_atoibase(const char *str, int base);

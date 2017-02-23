@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 13:58:47 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/22 17:42:49 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 18:57:12 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_append(char *str, int fd, int *eof)
+static	char	*ft_append(char *str, int fd, int *eof)
 {
 	char	*buffer;
 	char	*tmp;
@@ -38,7 +38,7 @@ char	*ft_append(char *str, int fd, int *eof)
 	return (str);
 }
 
-int		get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static char		*str[500];
 	int				i;

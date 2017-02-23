@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 15:47:54 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/22 15:21:00 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:37:58 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_stocksimp(char *s, va_list ap, int i)
+char			*ft_stocksimp(char *s, va_list ap, int i)
 {
 	char *tab;
 
@@ -40,7 +40,7 @@ char	*ft_stocksimp(char *s, va_list ap, int i)
 	return (tab);
 }
 
-char	*ft_stocklong(char *s, va_list ap, int i)
+char			*ft_stocklong(char *s, va_list ap, int i)
 {
 	char *tab;
 
@@ -68,7 +68,7 @@ char	*ft_stocklong(char *s, va_list ap, int i)
 	return (tab);
 }
 
-int		ft_stockall(char *s, int *i)
+static	int		ft_stockall(char *s, int *i)
 {
 	int lm;
 
@@ -91,7 +91,7 @@ int		ft_stockall(char *s, int *i)
 	return (lm);
 }
 
-char	*ft_teststock(char *s, int i, va_list ap)
+static	char	*ft_teststock(char *s, int i, va_list ap)
 {
 	int res;
 	int ii;
@@ -116,7 +116,7 @@ char	*ft_teststock(char *s, int i, va_list ap)
 		return (NULL);
 }
 
-char	**ft_stock(int *d, char *s, va_list ap)
+char			**ft_stock(int *d, char *s, va_list ap)
 {
 	char	**tab;
 	int		i[2];

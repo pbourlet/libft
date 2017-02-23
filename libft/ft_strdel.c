@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 12:17:26 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/22 17:39:15 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:23:27 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (*as)
-		free(*as);
-	*as = NULL;
+	if (!as)
+		return ;
+	ft_memdel((void**)as);
 }

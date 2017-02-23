@@ -6,13 +6,13 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 21:56:34 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/22 15:09:46 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/02/23 19:30:12 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_sols(int *t, int *d, char *tab, char *s)
+static	int		ft_sols(int *t, int *d, char *tab, char *s)
 {
 	if (t[7] && s[t[1]] == 's')
 	{
@@ -27,7 +27,7 @@ int		ft_sols(int *t, int *d, char *tab, char *s)
 	return (1);
 }
 
-void	ft_prec(int *d, char *s, int *t, char *tab)
+static	void	ft_prec(int *d, char *s, int *t, char *tab)
 {
 	if ((d[4] && !t[6] && !t[7]) || d[6] != 1 || (d[6] == 1 && d[5] == -1)
 	|| (t[5] && d[2] == 2))
@@ -53,7 +53,7 @@ void	ft_prec(int *d, char *s, int *t, char *tab)
 	}
 }
 
-void	ft_champ(int *d, char *s, int *t, char *tab)
+static	void	ft_champ(int *d, char *s, int *t, char *tab)
 {
 	if ((d[6] == 1 && d[5] != -1) || t[5] >= t[9])
 	{
@@ -80,7 +80,7 @@ void	ft_champ(int *d, char *s, int *t, char *tab)
 	}
 }
 
-int		ft_testdigit(int *d, char *s, int *t, char *tab)
+int				ft_testdigit(int *d, char *s, int *t, char *tab)
 {
 	if ((s[t[1]] == '%' && t[7] ? t[5] = 1 : 1) && !(d[4] && t[7] && !t[5]
 	&& *tab == '0' && (s[t[1]] == 'o' || s[t[1]] == 'O')))
