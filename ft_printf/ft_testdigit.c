@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 21:56:34 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/23 19:30:12 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/03/03 12:44:41 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ static	void	ft_champ(int *d, char *s, int *t, char *tab)
 
 int				ft_testdigit(int *d, char *s, int *t, char *tab)
 {
-	if ((s[t[1]] == '%' && t[7] ? t[5] = 1 : 1) && !(d[4] && t[7] && !t[5]
-	&& *tab == '0' && (s[t[1]] == 'o' || s[t[1]] == 'O')))
+	if ((s[t[1]] == '%' && t[7] ? (t[5] = 1) : 1) && !(d[4] && t[7]
+	&& !t[5] && *tab == '0' && (s[t[1]] == 'o' || s[t[1]] == 'O')))
 		(t[7] && !t[5] && tab[0] == '0' ? tab[0] = '\0' : 0);
 	t[9] = (s[t[1]] == 'c' && *tab == 0 ? 1 : ft_strlen(tab));
 	(t[7] && t[5] <= t[9] && s[t[1]] == 'S' ? t[5] = ft_wlen(tab, t) : 0);
