@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:40:18 by pbourlet          #+#    #+#             */
-/*   Updated: 2016/11/09 14:34:05 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/04/03 15:41:05 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	len = 0;
+	if (!s1)
+		return (NULL);
 	while (s1[len] != '\0')
 	{
 		len++;
