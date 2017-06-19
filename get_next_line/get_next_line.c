@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 13:58:47 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/02/23 18:57:12 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/06/19 13:22:56 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static	char	*ft_append(char *str, int fd, int *eof)
 	t = 0;
 	if (!(buffer = ft_strnew(BUFF_SIZE)))
 		return (NULL);
+	if (*str == '\n')
+		*eof = 1;
 	while (!t || !(ft_strchr(str, '\n') || *eof))
 	{
 		if ((ret = read(fd, buffer, BUFF_SIZE)) == -1)
@@ -59,6 +61,6 @@ int				get_next_line(const int fd, char **line)
 	while (str[fd][i] && str[fd][i] != '\n')
 		i++;
 	*line = ft_strsub(str[fd], 0, i);
-	ft_memmove(str[fd], str[fd] + i + 1, ft_strlen(str[fd]) - (i > 0 ? 1 : 0));
+	ft_memmove(str[fd], str[fd] + i + 1, ft_strlen(str[fd]) - (i > 1 ? 1 : 0));
 	return (1);
 }
