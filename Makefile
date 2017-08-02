@@ -6,7 +6,7 @@
 #*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/11/06 21:39:23 by pbourlet          #+#    #+#             *#
-#*   Updated: 2017/06/09 18:43:02 by pbourlet         ###   ########.fr       *#
+#*   Updated: 2017/08/02 18:47:16 by pbourlet         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -80,6 +80,7 @@ LIBFT =	$(addprefix libft/, \
 		ft_atoibase.c \
 		ft_itoabase.c \
 		ft_putnstr.c \
+		ft_strlcpy.c \
 		)
 
 PRINTF = $(addprefix ft_printf/, \
@@ -101,12 +102,22 @@ GNL =	$(addprefix get_next_line/, \
 		get_next_line.c \
 		)
 
+BRACK =	$(addprefix brackets/, \
+		ft_brackets.c \
+		ft_acc.c \
+		ft_car.c \
+		ft_parent.c \
+		ft_quote.c \
+		ft_dquote.c \
+		)
+
 INC =	\
 		includes/libft.h \
 		includes/get_next_line.h \
 		includes/ft_printf.h \
 		ft_printf/ft_printf.h \
 		get_next_line/get_next_line.h\
+		includes/brackets.h \
 
 SRCDIR =	src
 
@@ -118,16 +129,21 @@ OBJF =	$(PRINTF:ft_printf/%.c=$(OBJDIR)/%.o)
 
 OBJG =	$(GNL:get_next_line/%.c=$(OBJDIR)/%.o)
 
+OBJB =	$(BRACK:brackets/%.c=$(OBJDIR)/%.o)
+
 all: $(NAME)
 
-$(NAME): dir $(OBJ) $(OBJF) $(OBJG)
-	@ar rc $(NAME) $(OBJ) $(OBJF) $(OBJG)
+$(NAME): dir $(OBJ) $(OBJF) $(OBJG) $(OBJB)
+	@ar rc $(NAME) $(OBJ) $(OBJF) $(OBJG) $(OBJB)
 	@ranlib $(NAME)
 
 $(OBJDIR)/%.o: libft/%.c $(INC)
 	@gcc -c -Wall -Wextra -Werror -o $@ -c $< -I./includes
 
 $(OBJDIR)/%.o: ft_printf/%.c $(INC)
+	@gcc -c -Wall -Wextra -Werror -o $@ -c $< -I./includes
+
+$(OBJDIR)/%.o: brackets/%.c $(INC)
 	@gcc -c -Wall -Wextra -Werror -o $@ -c $< -I./includes
 
 $(OBJDIR)/%.o: get_next_line/%.c $(INC)

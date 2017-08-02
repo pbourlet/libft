@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 22:07:15 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/03/03 12:41:57 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/08/02 18:43:09 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <inttypes.h>
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include "brackets.h"
 
 int					ft_atoi(const char *str);
 int					ft_atoibase(const char *str, int base);
@@ -37,6 +38,7 @@ int					ft_toupper(int c);
 int					ft_nblen(int nb);
 int					ft_recursive_power(int nb, int power);
 int					ft_sqrt(int nb);
+int					ft_strlcpy(char *dest, char *src);
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_memalloc(size_t size);
