@@ -6,13 +6,31 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 14:24:26 by pbourlet          #+#    #+#             */
-/*   Updated: 2016/11/15 18:03:38 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/07/19 11:10:30 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(char const *s, char c)
+static int	ft_size(const char *str, char c)
+{
+	int i;
+	int n;
+
+	i = 0;
+	n = 0;
+	while (str[i] && str[i] == c)
+		i++;
+	while (str[i])
+	{
+		if (str[i] == c && str[i + 1] && str[i + 1] != c)
+			n++;
+		i++;
+	}
+	return (n + 2);
+}
+
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;
@@ -21,7 +39,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s || !(tab = malloc(sizeof(char *) * ft_strlen(s) / 2 + 1)))
+	if (!s || !(tab = malloc(sizeof(char *) * ft_size(s, c))))
 		return (NULL);
 	while (s[i] != '\0')
 	{

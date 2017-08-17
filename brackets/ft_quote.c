@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 12:33:05 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/07/24 12:56:11 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:14:36 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ char	*ft_quote(char *str, int c)
 			str = ft_parent(str, i + c);
 		else if (str[c + i] == '[')
 			str = ft_car(str, i + c);
+		else if (str[c + i] == '{')
+			str = ft_acc(str, i + c);
 		else if (str[c + i] == '\"')
-			str = ft_car(str, i + c);
+			str = ft_dquote(str, i + c);
 		if (!str || str[c + i] == ')' || str[c + i] == ']' || str[c + i] == '}')
 			return (NULL);
 		i++;
 	}
 	if (!str)
 		return (NULL);
-	if (str && str[c + i] == '}')
+	if (str && str[c + i] == '\'')
 	{
 		str[c] = '.';
 		str[c + i] = '.';

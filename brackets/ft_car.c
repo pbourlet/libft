@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 16:28:50 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/07/24 12:41:24 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:13:07 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_car(char *str, int c)
 		else if (str[c + i] == '{')
 			str = ft_acc(str, i + c);
 		else if (str[c + i] == '\'')
-			str = ft_car(str, i + c);
+			str = ft_quote(str, i + c);
 		else if (str[c + i] == '\"')
-			str = ft_acc(str, i + c);
+			str = ft_dquote(str, i + c);
 		if (!str || str[c + i] == '}' || str[c + i] == ')')
 			return (NULL);
 		i++;

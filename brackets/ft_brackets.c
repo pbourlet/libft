@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 16:31:20 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/07/24 14:23:34 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:19:18 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int		ft_brackets(char *str)
 		else if (str[i] == '{')
 			str = ft_acc(str, i);
 		else if (str[i] == '\'')
-			str = ft_car(str, i);
+			str = ft_quote(str, i);
 		else if (str[i] == '\"')
-			str = ft_acc(str, i);
+			str = ft_dquote(str, i);
 		if (!str || str[i] == '}' || str[i] == ']' || str[i] == ')')
 			return (0);
 		i++;
