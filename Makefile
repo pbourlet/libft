@@ -6,7 +6,7 @@
 #*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/11/06 21:39:23 by pbourlet          #+#    #+#             *#
-#*   Updated: 2017/08/02 18:47:16 by pbourlet         ###   ########.fr       *#
+#*   Updated: 2017/09/09 13:29:50 by pbourlet         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -81,6 +81,8 @@ LIBFT =	$(addprefix libft/, \
 		ft_itoabase.c \
 		ft_putnstr.c \
 		ft_strlcpy.c \
+		ft_strappend.c \
+		ft_strndup.c \
 		)
 
 PRINTF = $(addprefix ft_printf/, \
@@ -96,6 +98,7 @@ PRINTF = $(addprefix ft_printf/, \
 		 ft_testflags.c \
 		 ft_testtype.c \
 		 ft_strtoupper.c \
+		 ft_strappend.c \
 		 )
 
 GNL =	$(addprefix get_next_line/, \

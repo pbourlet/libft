@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 22:07:15 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/08/02 18:43:09 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/09/09 13:32:32 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include "ft_printf.h"
 # include "get_next_line.h"
 # include "brackets.h"
+
+# define ABS(x) (x > 0 ? x : -x)
+# define MIN(x, y) (x < y ? x : y)
+# define MAX(x, y) (x > y ? x : y)
 
 int					ft_atoi(const char *str);
 int					ft_atoibase(const char *str, int base);
@@ -63,10 +67,12 @@ void				*ft_strnew(size_t size);
 void				ft_putstr_fd(char const *str, int fd);
 void				ft_putnstr(char *s, int n);
 
+char				*ft_strappend(char *str, const char *content);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strchr(char *s, int c);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
