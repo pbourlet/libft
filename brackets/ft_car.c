@@ -6,7 +6,7 @@
 /*   By: pbourlet <pbourlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 16:28:50 by pbourlet          #+#    #+#             */
-/*   Updated: 2017/08/17 17:13:07 by pbourlet         ###   ########.fr       */
+/*   Updated: 2017/09/09 12:53:43 by pbourlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ char	*ft_car(char *str, int c)
 			return (NULL);
 		i++;
 	}
-	if (!str)
-		return (NULL);
 	if (str && str[c + i] == ']')
 	{
 		str[c] = '.';
 		str[c + i] = '.';
 	}
-	return (str);
+	return (!str ? NULL : str);
 }
